@@ -8,7 +8,7 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto py-8">
 
-        <div class="text-center" v-for="bz in biz">
+        <div class="text-center dark:hover:bg-gray-500 hover:bg-gray-100 hover:rounded" v-for="bz in biz">
             <NuxtLink :to="`/${bz.url}`">
                 <img :src="`${apiBase}/${bz.img}`" :alt="bz.name"
                     class="w-full h-48 object-contain rounded sm:object-cover xl:object-contain" />
