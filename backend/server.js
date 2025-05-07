@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const connectDB = require("./config/db");
 const businessRoutes = require("./routes/businessRoutes");
+const path = require("path");
 
 dotenv.config();
 connectDB();
@@ -16,6 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/business", businessRoutes);
+app.use("/assets", express.static(path.join(__dirname, "assets")));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

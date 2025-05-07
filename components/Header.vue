@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
       <!-- Logo -->
       <NuxtLink to="/" class="text-xl font-bold">
-        <img src="~/assets/transparent-header.png" alt="MyApp Logo" class="h-8 w-auto" />
+        <img src="~/assets/transparent-header.png" alt="MyApp Logo" class="h-8 w-auto dark:bg-gray-300 rounded" />
       </NuxtLink>
 
       <!-- Desktop nav -->
