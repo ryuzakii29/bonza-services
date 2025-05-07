@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-white border-b shadow-md sticky top-0 z-50">
+  <header class="dark:bg-gray-700 bg-white border-b shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
       <!-- Logo -->
       <NuxtLink to="/" class="text-xl font-bold">
@@ -8,9 +8,12 @@
 
       <!-- Desktop nav -->
       <nav class="hidden md:flex gap-6 text-sm font-medium">
-        <NuxtLink to="/" class="hover:text-blue-600">Home</NuxtLink>
-        <NuxtLink to="/about" class="hover:text-blue-600">About</NuxtLink>
-        <NuxtLink to="/contact" class="hover:text-blue-600">Contact</NuxtLink>
+        <NuxtLink to="/" class="hover:text-blue-600 dark:text-white">Home</NuxtLink>
+        <NuxtLink to="/about" class="hover:text-blue-600 dark:text-white">About</NuxtLink>
+        <NuxtLink to="/contact" class="hover:text-blue-600 dark:text-white">Contact</NuxtLink>
+        <button @click="dark.toggle()" class="text-sm px-2 py-1 rounded">
+          {{ dark.isDark ? '☀️' : '🌙' }}
+        </button>
       </nav>
 
       <!-- Mobile toggle button -->
@@ -30,6 +33,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { useDarkStore } from '@/stores/dark'
+
 const open = ref(false)
+const dark = useDarkStore()
+
+onMounted(() => {
+  dark.init
+})
 </script>

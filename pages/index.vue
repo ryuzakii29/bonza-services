@@ -1,4 +1,11 @@
 <template>
+    <div class="grid grid-cols-1 mx-auto py-8 justify-items-center">
+        <img src="~/assets/transparent-header.png" alt="bnz-logo" />
+        <p class="text-md text-gray-600 my-4">
+            Discover our diverse portfolio of businesses, each offering unique services and
+            experiences.
+        </p>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto py-8">
         <!-- Tef's Photobooth -->
         <div class="text-center">
@@ -48,5 +55,5 @@
 </template>
 
 <script setup>
-import HelloWorld from '~/components/Test.vue'
+
 </script>

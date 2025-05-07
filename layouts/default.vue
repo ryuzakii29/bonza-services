@@ -1,7 +1,7 @@
 <template>
     <div>
         <Header />
-        <main class="px-4 py-6">
+        <main class="dark:bg-gray-600 dark:text-white px-4 py-6">
             <slot />
         </main>
 
