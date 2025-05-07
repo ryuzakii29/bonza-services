@@ -10,7 +10,7 @@
 
         <div class="text-center" v-for="bz in biz">
             <NuxtLink :to="`/${bz.url}`">
-                <img :src="`${server}/${bz.img}`" :alt="bz.name"
+                <img :src="`${apiBase}/${bz.img}`" :alt="bz.name"
                     class="w-full h-48 object-contain rounded sm:object-cover xl:object-contain" />
                 <p class="mt-2 text-xl font-bold">{{ bz.name }}</p>
                 <p class="text-sm">{{ bz.description }}</p>
@@ -22,11 +22,6 @@
 </template>
 
 <script setup>
-const server = "http://localhost:5000"
-const { data, status, error, refresh, clear } = await useFetch(`${server}/api/business`)
-
-if (error.value) {
-    console.error('Failed to fetch businesses:', error.value)
-}
-const biz = data.value;
+const biz = await fetchBusiness();
+const apiBase = useRuntimeConfig().public.apiBase;
 </script>
