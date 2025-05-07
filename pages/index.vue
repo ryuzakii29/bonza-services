@@ -55,5 +55,9 @@
 </template>
 
 <script setup>
-
+const { data, status, error, refresh, clear } = await useFetch('http://localhost:5000/api/business')
+if (error.value) {
+    console.error('Failed to fetch businesses:', error.value)
+}
+const biz = data.value;
 </script>
